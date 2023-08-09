@@ -4,5 +4,5 @@
 
 Para rodar esse projeto na sua máquina, é necessário que instale:
 ```
-Colocar conteúdo (linhas de comando)
+python get_mysql.py
 ```
