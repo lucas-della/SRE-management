@@ -103,5 +103,3 @@ contagem_chamados_deploys_semanas.write.saveAsTable("della.tb_semanas", mode="ov
 
 #Encerrar a sessão
 spark.stop()
-
-#Teste
