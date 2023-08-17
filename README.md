@@ -24,7 +24,7 @@ docker-compose pull
 docker image ls #lista as imagens baixadas
 ```
 
-Para executar os containers baixados basta executar:
+Para executar os containers baixados pela primeira vez basta executar:
 ```
 docker-compose up -d
 
