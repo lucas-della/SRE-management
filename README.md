@@ -47,7 +47,7 @@ Para a criação das tabelas utilizei principalmente a biblioteca Faker do Pytho
 ### Inserção das tabelas no MySQL
 Ao gerar os arquivos CSV das tabelas que gostaria de inserir no SGBD, coloquei-os na pasta do docker para que pudesse copiar para dentro do container com o MySQL com o comando:
 ```
-docker cp logs.csv database:/var/lib/mysql-files/
+docker cp chamados.csv database:/var/lib/mysql-files/
 ```
 A pasta escolhida para ser o repositório dos arquivos CSV no container do MySQL não foi por acaso, o sistema estava configurado para apenas aceitar leitura e gravações dentro desta pasta específica.
 
