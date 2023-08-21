@@ -41,3 +41,37 @@ Com o ambiente montado, o primeiro passo que tomei foi criar as tabelas que util
 Para a criação das tabelas utilizei principalmente a biblioteca Faker do Python e após definir os parâmetros necessários, gerei ela em CSV para poder ingerir no MySQL.
 
 > A biblioteca Faker é extremamente maleável com as suas necessidades, além de possuir alguns geradores de dados nativos, ela permite que crie geradores com diferentes strings e números. O potencial da biblioteca aumenta consideravelmente quando são utilizados estruturas de codificação do Python e a criação de funções.
+
+[Código para Geração de Tabelas](https://github.com/lucas-della/SRE-management/blob/main/get_mysql.py)
+
+### Inserção das tabelas no MySQL
+Ao gerar os arquivos CSV das tabelas que gostaria de inserir no SGBD, coloquei-os na pasta do docker para que pudesse copiar para dentro do container com o MySQL com o comando:
+```
+docker cp logs.csv database:/var/lib/mysql-files/
+```
+A pasta escolhida para ser o repositório dos arquivos CSV no container do MySQL não foi por acaso, o sistema estava configurado para apenas aceitar leitura e gravações dentro desta pasta específica.
+
+Após isso acessei o Banco de Dados, criei as tabelas e inseri as tabelas por scripts SQL:
+
+- Criação da Tabela
+```
+CREATE TABLE tb_chamados (
+     number VARCHAR(20) PRIMARY KEY,
+     caller_id VARCHAR(20) NOT NULL,
+     category VARCHAR(50) NOT NULL,
+     subcategory VARCHAR(50) NOT NULL,
+     u_symptom VARCHAR(50) NOT NULL,
+     assignment_group VARCHAR(50) NOT NULL,
+     incident_state VARCHAR(20) NOT NULL,
+     opened_at DATETIME NOT NULL,
+     closed_at DATETIME );
+```
+
+- Inserção dos dados na tabela
+```
+LOAD DATA INFILE '/var/lib/mysql-files/chamados.csv'
+INTO TABLE tb_chamados FIELDS
+TERMINATED BY ',' LINES
+TERMINATED BY '\n'
+IGNORE 1 LINES;
+```
