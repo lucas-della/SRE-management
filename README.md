@@ -42,7 +42,7 @@ Para a criação das tabelas utilizei principalmente a biblioteca Faker do Pytho
 
 > A biblioteca Faker é extremamente maleável com as suas necessidades, além de possuir alguns geradores de dados nativos, ela permite que crie geradores com diferentes strings e números. O potencial da biblioteca aumenta consideravelmente quando são utilizados estruturas de codificação do Python e a criação de funções.
 
-[Código para Geração de Tabelas](https://github.com/lucas-della/SRE-management/blob/main/get_mysql.py)
+[Código para Geração de Tabelas](https://github.com/lucas-della/SRE-management/blob/main/ProjetoJ.ipynb)
 
 ### Inserção das tabelas no MySQL
 Ao gerar os arquivos CSV das tabelas que gostaria de inserir no SGBD, coloquei-os na pasta do docker para que pudesse copiar para dentro do container com o MySQL com o comando:
@@ -75,3 +75,9 @@ TERMINATED BY ',' LINES
 TERMINATED BY '\n'
 IGNORE 1 LINES;
 ```
+### Leitura, processamento e gravação dos dados
+
+Após a inserção dos dados no MySQL, decidi utilizar o PySpark para o processamento de dados, sendo uma boa escolha pelo seu processamento rápido e distribuído, aguentando cargas batch e streaming. No código, extrai os dados das tabelas, fiz a limpeza que precisava, criei colunas para não deixar cargas de trabalho para o software de visualização e por fim coloquei os dados tratados dentro de um cluster Hive.
+O código pode ser encontrado no seguinte arquivo:
+[Código de Processamento de Dados](https://github.com/lucas-della/SRE-management/blob/main/get_mysql.py)
+
