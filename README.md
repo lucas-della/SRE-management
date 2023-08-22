@@ -10,7 +10,7 @@ Ao aprender sobre a cultura Dev Ops, estando no dia a dia de uma equipe de SRE, 
 A empresa DataMetrics possui uma plataforma de dados que serve empresas de diversos setores, para garantir sua qualidade e o respeito de seus clientes ela busca a implementação de indicadores do seu serviço, a partir de agora denominados SLIs e a determinação de objetivos para alcançar em seus serviços, a partir de agora denominados SLOs, para isso precisam que faça um modelo desse monitoramento e com os dados fornecidos veja se os objetivos do último ano foram alcançados e, se não foram, o que podem fazer para melhora-los.
 Os SLIs que devem ser medidos são os seguintes: Frequência de deploys (tabela: esteira_prod); Taxa de Insucesso de Deploy (tabela: esteira_prod); Disponibilidade (tabela: log); Velocidade de resposta a erros (tabela: chamados). No último ano o objetivo foi ter uma frequência de deploy de, no máximo, 3.5 horas , ocorrer, no máximo, 4.5 falhas por deploy, alcançar, no mínimo, 94% de disponibilidade e ter uma velocidade de resposta a erros de, no máximo, 1.5 dias.
 
-## Arquitetura que será desenvolvida
+## Arquitetura desenvolvida
 ![Arquitetura para Pipeline de Processamento de Dados](https://github.com/lucas-della/SRE-management/blob/main/arquitetura.png)
 
 
