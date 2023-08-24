@@ -83,7 +83,18 @@ IGNORE 1 LINES;
 
 Após a inserção dos dados no MySQL, decidi utilizar o PySpark para o processamento de dados, sendo uma boa escolha pelo seu processamento rápido e distribuído, aguentando cargas batch e streaming. No código, extrai os dados das tabelas, fiz a limpeza que precisava, criei colunas para não deixar cargas de trabalho para o software de visualização e por fim coloquei os dados tratados dentro de um cluster Hive.
 
-O código pode ser encontrado no seguinte arquivo:
-
 [Código de Processamento de Dados](https://github.com/lucas-della/SRE-management/blob/main/get_mysql.py)
+### Conexão e visualização no Power BI
 
+A importação dos dados para o Power BI foi feita por meio da conexão Get Data > Others > Hive LLAP, estabelecendo a conexão com o hive por meio da porta configurada, neste caso, por padrão localhost:10000. Para este projeto achei o suficiente fazer a importação dos dados sem estabelecer o DirectQuery.
+
+![Dashboard de SLI](https://github.com/lucas-della/SRE-management/blob/main/dash_sli.png)
+
+![Dashboard de SLO](https://github.com/lucas-della/SRE-management/blob/main/dash_slo.png)
+
+### Próximos passos
+
+- Melhorar a visualização do Power BI
+- Incluir o error budget no dashboard
+- Refazer a base de incidentes para adequar ao conceito de disponibilidade
+- Integrar sugestões de ações com IA
