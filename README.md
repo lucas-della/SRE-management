@@ -11,7 +11,7 @@ A empresa DataMetrics possui uma plataforma de dados que serve empresas de diver
 Os SLIs que devem ser medidos são os seguintes: Frequência de deploys (tabela: esteira_prod); Taxa de Insucesso de Deploy (tabela: esteira_prod); Disponibilidade (tabela: log); Velocidade de resposta a erros (tabela: chamados). No último ano o objetivo foi ter uma frequência de deploy de, no máximo, 3.5 horas , ocorrer, no máximo, 4.5 falhas por deploy, alcançar, no mínimo, 94% de disponibilidade e ter uma velocidade de resposta a erros de, no máximo, 1.5 dias.
 
 ## Arquitetura desenvolvida
-![Arquitetura para Pipeline de Processamento de Dados](https://github.com/lucas-della/SRE-management/blob/main/arquitetura.png)
+![Arquitetura para Pipeline de Processamento de Dados](https://github.com/lucas-della/SRE-management/blob/main/imagens/arquitetura.png)
 
 
 
@@ -88,9 +88,9 @@ Após a inserção dos dados no MySQL, decidi utilizar o PySpark para o processa
 
 A importação dos dados para o Power BI foi feita por meio da conexão Get Data > Others > Hive LLAP, estabelecendo a conexão com o hive por meio da porta configurada, neste caso, por padrão localhost:10000. Para este projeto achei o suficiente fazer a importação dos dados sem estabelecer o DirectQuery.
 
-![Dashboard de SLI](https://github.com/lucas-della/SRE-management/blob/main/dash_sli.png)
+![Dashboard de SLI](https://github.com/lucas-della/SRE-management/blob/main/imagens/dash_sli.png)
 
-![Dashboard de SLO](https://github.com/lucas-della/SRE-management/blob/main/dash_slo.png)
+![Dashboard de SLO](https://github.com/lucas-della/SRE-management/blob/main/imagens/dash_slo.png)
 
 ### Próximos passos
 
